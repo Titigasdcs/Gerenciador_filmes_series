@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
-from .models import (
-    Filme, FilmeAtor, Genero, Serie, SerieEpisodio, Temporada, Ator, Diretor, Pais, Continente, Episodio
-)
+from .models import (Filme, FilmeAtor, Genero, Serie, SerieEpisodio, Temporada, Ator, Diretor, Pais, Continente, Episodio)
 from .models import Filme
-from .forms import FilmeForm  
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, DeleteView
+from .models import Filme, Serie
+from .forms import FilmeForm, SerieForm
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
@@ -115,13 +116,6 @@ class ContinenteView(View):
         continentes = Continente.objects.all()
         return render(request, 'continentes.html', {'continentes': continentes})
 
-
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView
-from .models import Filme, Serie
-from .forms import FilmeForm, SerieForm
-
-# --- FILMES ---
 class FilmeCreateView(CreateView):
     model = Filme
     form_class = FilmeForm
@@ -139,8 +133,6 @@ class FilmeDeleteView(DeleteView):
     template_name = 'excluir_filme.html'
     success_url = reverse_lazy('filmes')
 
-
-# --- SÉRIES ---
 class SerieCreateView(CreateView):
     model = Serie
     form_class = SerieForm

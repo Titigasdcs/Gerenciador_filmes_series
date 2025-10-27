@@ -2,17 +2,11 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = 'django-insecure-duv-$2dn(dd@g(5lt)(vkw4c)5d7*#9geehj25&hg68a+x3z@3'
-
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# -------------------------------
-# APLICAÇÕES INSTALADAS
-# -------------------------------
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -20,13 +14,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',  # sua aplicação principal
+    'app', 
 ]
 
-
-# -------------------------------
-# MIDDLEWARE
-# -------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -40,10 +30,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-
-# -------------------------------
-# TEMPLATES
-# -------------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -65,10 +51,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
-# -------------------------------
-# BANCO DE DADOS
-# -------------------------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -76,10 +58,6 @@ DATABASES = {
     }
 }
 
-
-# -------------------------------
-# VALIDAÇÃO DE SENHAS
-# -------------------------------
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -87,31 +65,18 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
-# -------------------------------
-# INTERNACIONALIZAÇÃO
-# -------------------------------
-LANGUAGE_CODE = 'pt-br'  # ✅ Corrigido para português
-TIME_ZONE = 'America/Sao_Paulo'  # ✅ corrigido: o erro vinha de "Sao Paulo" sem underline
+LANGUAGE_CODE = 'pt-br'  
+TIME_ZONE = 'America/Sao_Paulo' 
 USE_I18N = True
 USE_TZ = True
 
-
-# -------------------------------
-# ARQUIVOS ESTÁTICOS
-# -------------------------------
 STATIC_URL = '/static/'
 
-# ✅ Onde o Django vai procurar os arquivos CSS, JS, imagens, etc.
 STATICFILES_DIRS = [
     BASE_DIR / "app" / "static",
 ]
 
-# ✅ Pasta onde o collectstatic junta tudo (usado em deploy)
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# -------------------------------
-# ARQUIVOS DE MÍDIA (caso tenha imagens futuramente)
-# -------------------------------
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

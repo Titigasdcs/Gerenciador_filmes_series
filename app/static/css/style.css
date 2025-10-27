@@ -1,8 +1,3 @@
-/* ================================
-   CineStream Admin - Estilo Custom
-   ================================ */
-
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,35 +5,31 @@
   transition: all 0.2s ease;
 }
 
-/* Corpo geral */
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #121212;
-  color: #e0e0e0;
+  color: #0e0d0d;
   line-height: 1.6;
   font-size: 16px;
 }
 
-/* ======================
-   NAVBAR
-   ====================== */
 .navbar {
   background: linear-gradient(90deg, #000, #111);
-  border-bottom: 2px solid #00e676;
+  border-bottom: 2px solid #bc62e6;
   box-shadow: 0 2px 10px rgba(0,0,0,0.7);
 }
 
 .navbar .nav-link {
-  color: #e0e0e0 !important;
+  color: #e0e0e0;
   font-weight: 500;
   margin-right: 10px;
 }
 .navbar .nav-link:hover {
-  color: #00e676 !important;
+  color: #bc62e6;
 }
 
 .navbar .nav-link.text-warning {
-  color: #ffca28 !important;
+  color: #bc62e6;
   font-weight: 600;
 }
 
@@ -48,24 +39,18 @@ body {
   text-transform: uppercase;
 }
 
-/* ======================
-   CONTAINER
-   ====================== */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 30px auto;
-  background: #1e1e1e;  /* dark card */
+  background: #1e1e1e;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0px 6px 16px rgba(0,0,0,0.6);
 }
 
-/* ======================
-   CABEÇALHOS
-   ====================== */
 .page-header h1 {
-  color: #00e676;
+  color: #bc62e6;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -74,9 +59,6 @@ body {
   color: #aaa;
 }
 
-/* ======================
-   CARDS
-   ====================== */
 .card {
   background: #2a2a2a;
   border: none;
@@ -89,15 +71,12 @@ body {
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
 }
 .card-header {
-  background: linear-gradient(45deg, #00c853, #009624);
+  background: linear-gradient(45deg, #bc62e6, #bc62e6);
   color: #fff;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
-/* ======================
-   TABELAS
-   ====================== */
 .table {
   margin: 0;
   border-radius: 12px;
@@ -109,7 +88,7 @@ body {
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 1px;
-  color: #00e676;
+  color: #bc62e6;
 }
 .table tbody tr:hover {
   background-color: rgba(0, 200, 83, 0.1);
@@ -118,23 +97,17 @@ body {
   vertical-align: middle;
 }
 
-/* ======================
-   BOTÕES
-   ====================== */
 .btn-outline-light {
   border-radius: 20px;
   border-width: 2px;
   font-weight: 500;
 }
 .btn-outline-light:hover {
-  background-color: #00c853;
-  border-color: #00c853;
+  background-color: #bc62e6;
+  border-color: #820bb9;
   color: #fff;
 }
 
-/* ======================
-   FOOTER
-   ====================== */
 footer {
   border-top: 1px solid #333;
   color: #888;

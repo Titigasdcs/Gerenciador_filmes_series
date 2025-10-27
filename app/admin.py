@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import (
-    Filme, FilmeAtor, Genero, Serie, Episodio, SerieEpisodio,
-    Temporada, Ator, Diretor, Pais, Continente
-)
+from .models import (Filme, FilmeAtor, Genero, Serie, Episodio, SerieEpisodio,Temporada, Ator, Diretor, Pais, Continente)
 
 
 class FilmeAtorInline(admin.TabularInline):

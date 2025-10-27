@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Filme{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Excluir Filme</h2>
+  <p>Tem certeza que deseja excluir <strong>{{ object.nome }}</strong>?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="{% url 'filmes' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

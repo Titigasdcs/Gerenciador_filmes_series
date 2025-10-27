@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Séries</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+  <a class="navbar-brand fw-bold" href="{% url 'index' %}">CineStream Admin</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="{% url 'filmes' %}">Filmes</a></li>
+      <li class="nav-item"><a class="nav-link active" href="{% url 'series' %}">Séries</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'temporadas' %}">Temporadas</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'serie_episodios' %}">Série-Episódios</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Conteúdo -->
+<div class="container mt-5">
+  <h2 class="mb-4">Séries</h2>
+  <table class="table table-dark table-striped table-hover align-middle">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Gênero</th>
+        <th>País</th>
+        <th>Diretor</th>
+        <th>Duração (min)</th>
+        <th>Data Lançamento</th>
+        <th>Sinopse</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for serie in series %}
+      <tr>
+        <td>{{ serie.nome }}</td>
+        <td>{{ serie.genero }}</td>
+        <td>{{ serie.pais }}</td>
+        <td>{{ serie.diretor }}</td>
+        <td>{{ serie.duracao }}</td>
+        <td>{{ serie.data_lancamento|date:"d/m/Y" }}</td>
+        <td class="text-truncate" style="max-width: 200px;">{{ serie.sinopse }}</td>
+        <td>
+          <a href="{% url 'serie_update' serie.id %}" class="btn btn-warning btn-sm">Editar</a>
+          <a href="{% url 'serie_delete' serie.id %}" class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="8" class="text-center text-muted">Nenhuma série cadastrada.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Rodapé -->
+<footer class="bg-black text-center py-3 mt-5">
+  <p class="mb-0">© 2025 CineStream Admin</p>
+</footer>
+
+</body>
+</html>

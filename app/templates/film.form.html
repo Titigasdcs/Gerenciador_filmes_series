@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Filme - Formulário{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2>{% if filme %}Editar Filme{% else %}Novo Filme{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" name="nome" id="nome" class="form-control" value="{{ filme.nome|default:'' }}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="{% url 'filmes' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

@@ -21,13 +21,20 @@
 
 <div class="container mt-5">
   <h2 class="mb-4">Temporadas</h2>
+
   <table class="table table-dark table-striped table-hover align-middle">
-    <thead><tr><th>Número</th></tr></thead>
+    <thead>
+      <tr>
+        <th>Série — Temporada</th>
+      </tr>
+    </thead>
     <tbody>
       {% for temporada in temporadas %}
-      <tr><td>Temporada {{ temporada.numero }}</td></tr>
+        <tr>
+          <td>{{ temporada.serie.nome }} - Temporada {{ temporada.numero }}</td>
+        </tr>
       {% empty %}
-      <tr><td class="text-center text-muted">Nenhuma temporada cadastrada.</td></tr>
+        <tr><td class="text-center text-muted">Nenhuma temporada cadastrada.</td></tr>
       {% endfor %}
     </tbody>
   </table>
